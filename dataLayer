@@ -1,0 +1,49 @@
+
+// This will be pushed into the dataLayer when a user successfully completes the registration form on 
+https://www.aero-access.com/secure/login.aspx?lt=m&ReturnUrl=%2fmy_account%2findex.aspx
+
+dataLayer.push({
+	"event" : "accountRegistrationSuccess", // This is for Analytics and is the dataLayer variable that will be shown when user attempts to create an account
+	"eventCategory": "Registration", // This is for Analytics for segmenting for clarity
+	"eventAction" : "Successful Registration", // This is for analytics to segment on success rate
+	"eventLabel": "Registration Success", // This is for analytics to segment on success rate
+	"userId": userId // this is part of analytics to track users across devices 
+});
+
+
+// This will be pushed into the dataLayer when a user fails to register due to any given cause, non matching passwords, incorrect email, not agreeing to terms, etc 
+ 
+dataLayer.push({
+	"event": "accountRegistrationFailure",  // This is for Analytics and is the dataLayer variable that will be shown when user fails to create an account
+	"eventCategory": "Registration", // This is for Analytics for segmenting for clarity
+	"eventAction": "Failed Registration", // this is for analytics to segment on failure rate
+	"eventLabel": "Registration Failure" // This is for analytics to segment on failure rate
+});
+
+
+// This event will be pushed when a user logs in successfully
+dataLayer.push({
+	"event": "loginSuccess", // Fires on user successfully logging in
+	"eventCategory": "Login",
+	"eventAction": "Successfully Logged in",
+	"eventLabel": "Login Successful",
+	"userId": "userId" 
+});
+
+//
+// This event will be pushed when a user fails to log in 
+dataLayer.push({
+	"event": "loginFailure",  // fires when user fails login for any x reason 
+	"eventCategory": "Login",
+	"eventAction": "Failed Log in",
+	"eventLabel": "Login Failure"
+});
+
+//
+dataLayer.push({
+	"event": "quoteComplete" // fires when user successfully completes all steps to get a quote RFQ process
+	"eventCategory": "Quote",
+	"eventLabel": "Quote Complete",
+	"eventAction": "Completed Quote"
+});
+
